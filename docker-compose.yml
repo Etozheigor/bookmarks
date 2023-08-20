@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:13.2
+    container_name: bookmarks
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_value:/var/lib/postgresql/data/
+    env_file:
+      - bookmarks_app/bookmarks_app/.env
+volumes:
+  db_value:
